@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ctse-app
-          image: supplier_management_ms:v3
+          image: randi480/supplier_management_ms:v3
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
