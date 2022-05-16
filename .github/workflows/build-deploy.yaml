@@ -7,7 +7,7 @@ env:
   PROJECT_ID: ctse-assignment-03
   GKE_CLUSTER: ctse-assignment-03-cluster
   GKE_ZONE: asia-south1-a
-  CONTAINER_NAME: supplier_management_ms
+  CONTAINER_NAME: supplier-management-ms
   CONTAINER_IMAGE_NAME: supplier_management_ms
   DOCKER_USERNAME: randi480
 
