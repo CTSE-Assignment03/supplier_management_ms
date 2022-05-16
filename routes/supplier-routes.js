@@ -11,7 +11,7 @@ const {
 router.route("/createsupplier").post(createSupplier);
 router.route("/updatesupplier").put(updateSupplier);
 router.route("/deletesupplier/:id").delete(deleteSupplier);
-router.route("/getallauppliers").get(getAllSuppliers);
+router.route("/getallasuppliers").get(getAllSuppliers);
 router.route("/getIsupplierByID/:id").get(getISupplierByID);
 
 module.exports = router;

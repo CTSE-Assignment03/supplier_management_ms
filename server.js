@@ -30,7 +30,7 @@ mongoose
   });
 
 app.use("/ctse/api/supplier", supplierRoutes);
-app.get("/ctse/home", (req, res) => {
+app.get("/ctse/home/supplier", (req, res) => {
   res.send("Hello from supplier_management_ms!!");
 });
 
