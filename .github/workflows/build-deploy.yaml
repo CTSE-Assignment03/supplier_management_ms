@@ -15,7 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout GitHub Repo
+        uses: actions/checkout@v3
 
       - name: Print Latest Commit Hash
         run: echo commit hash is ${{ github.sha }}
@@ -35,17 +36,16 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.CONTAINER_IMAGE_NAME }}:${{ github.sha }}
 
       - name: Authenticate GCP
-      - id: "auth"
+        id: "auth"
         uses: "google-github-actions/auth@v0"
         with:
           credentials_json: "${{ secrets.GKE_SECRET_KEY }}"
 
       - name: Set up Google Cloud
-      - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
 
       - name: Get the GKE credentials
-      - run: |-
+        run: |-
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
 
       - name: Execute Deployment
