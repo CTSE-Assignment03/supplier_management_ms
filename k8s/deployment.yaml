@@ -15,7 +15,7 @@ spec:
         app: ctse-app
     spec:
       containers:
-        - name: supplier_management_ms
+        - name: supplier-management-ms
           image: randi480/supplier_management_ms:v2
           imagePullPolicy: Always
           ports:
