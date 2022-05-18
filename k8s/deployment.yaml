@@ -5,18 +5,23 @@ metadata:
   labels:
     app: ctse-app
 spec:
-  replicas: 2
+  replicas: 3 #  define the number of instances in pods
   selector:
-    matchLabels:
+    matchLabels: # This must match the labels set on the pod
       app: ctse-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
   template:
     metadata:
       labels:
-        app: ctse-app
+        app: ctse-app # Set labels on the pod.
     spec:
       containers:
         - name: supplier-management-ms
-          image: randi480/supplier_management_ms:v2
+          image: randi480/supplier_management_ms:v4
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
